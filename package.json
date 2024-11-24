@@ -1,5 +1,5 @@
 {
-  "name": "langchain-gpt",
+  "name": "riffbot",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,16 @@
     "next": "15.0.3",
     "openai": "^4.73.0",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.344.0",
+    "next-themes": "^0.2.1",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -25,6 +34,7 @@
     "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "autoprefixer": "^10.0.1"
   }
 }
