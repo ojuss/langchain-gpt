@@ -19,35 +19,36 @@ export default function Home() {
         <div className="text-center">
           <div className="flex justify-center items-center mb-8">
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-600 rounded-full blur opacity-75 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-full blur opacity-75 animate-pulse"></div>
               <div className="relative bg-black p-4 rounded-full">
-                <Music className="h-12 w-12 text-white" />
+                <Music className="h-12 w-12 text-slate-600" />
               </div>
             </div>
-            <h1 className="ml-4 text-6xl font-bold bg-gradient-to-r from-teal-400 to-teal-600 text-transparent bg-clip-text">
+            <h1 className="ml-4 text-6xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-600 text-transparent bg-clip-text">
               RiffBot
             </h1>
           </div>
           <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-            Your AI-powered music companion. Create, compose, and explore music like never before.
+            Your AI-powered music companion. Create, compose, and explore music
+            like never before.
           </p>
         </div>
 
         {/* Input Section */}
         <div className="mt-60 max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-600 rounded-lg blur opacity-75"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-black rounded-lg blur opacity-75"></div>
             <div className="relative">
               <input
                 type="text"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
                 placeholder="Ask RiffBot anything about music..."
-                className="w-full px-6 py-4 bg-black/90 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-6 py-4 bg-black/90 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent"
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-teal-600 to-blue-600 rounded-md text-white font-medium hover:opacity-90 transition-opacity"
+                className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-full text-white font-medium hover:opacity-90 transition-opacity"
               >
                 <ArrowRight className="h-5 w-5" />
               </button>
@@ -78,17 +79,17 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-      <div className="relative px-6 py-8 bg-black rounded-lg">
-        <div className="flex items-center justify-center w-12 h-12 bg-purple-900/50 rounded-lg mb-4">
-          {icon}
-        </div>
-        <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-        <p className="text-gray-400">{description}</p>
-      </div>
-    </div>
-  );
-}
+// function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+//   return (
+//     <div className="relative group">
+//       <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+//       <div className="relative px-6 py-8 bg-black rounded-lg">
+//         <div className="flex items-center justify-center w-12 h-12 bg-purple-900/50 rounded-lg mb-4">
+//           {icon}
+//         </div>
+//         <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+//         <p className="text-gray-400">{description}</p>
+//       </div>
+//     </div>
+//   );
+// }
