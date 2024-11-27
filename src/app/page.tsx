@@ -1,16 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import { Music, Bot, Sparkles, ArrowRight } from "lucide-react";
+import { Music, ArrowRight } from "lucide-react";
+import { useChat } from "ai/react";
+import { Message } from "ai";
+import { leapfrog } from "ldrs";
 
 export default function Home() {
-  const [prompt, setPrompt] = useState("");
+  const {
+    input,
+    append,
+    isLoading,
+    messages,
+    handleSubmit,
+    handleInputChange,
+  } = useChat();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle prompt submission here
-    console.log("Prompt submitted:", prompt);
-  };
+  leapfrog.register();
+
+  const isMessage = false;
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
@@ -28,21 +35,31 @@ export default function Home() {
               RiffBot
             </h1>
           </div>
-          <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-            Your AI-powered music companion. Create, compose, and explore music
-            like never before.
-          </p>
+          {isMessage ? (
+            <>
+              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+                Your AI-powered music companion. Create, compose, and explore
+                music like never before.
+              </p>
+            </>
+          ) : (
+            <>
+              {isLoading && (
+                <l-leapfrog size="40" speed="2.5" color="white"></l-leapfrog>
+              )}
+            </>
+          )}
         </div>
 
         {/* Input Section */}
-        <div className="mt-60 max-w-3xl mx-auto">
+        <div className="mt-80 max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-black rounded-lg blur opacity-75"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-indigo-800 rounded-full blur opacity-75"></div>
             <div className="relative">
               <input
                 type="text"
-                value={prompt}
-                onChange={(e) => setPrompt(e.target.value)}
+                value={input}
+                onChange={handleInputChange}
                 placeholder="Ask RiffBot anything about music..."
                 className="w-full px-6 py-4 bg-black/90 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent"
               />
@@ -78,18 +95,3 @@ export default function Home() {
     </main>
   );
 }
-
-// function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-//   return (
-//     <div className="relative group">
-//       <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-//       <div className="relative px-6 py-8 bg-black rounded-lg">
-//         <div className="flex items-center justify-center w-12 h-12 bg-purple-900/50 rounded-lg mb-4">
-//           {icon}
-//         </div>
-//         <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-//         <p className="text-gray-400">{description}</p>
-//       </div>
-//     </div>
-//   );
-// }
