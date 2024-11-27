@@ -17,11 +17,11 @@ export default function Home() {
 
   leapfrog.register();
 
-  const isMessage = false;
+  const isMessage = true;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
-      <div className="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <main className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-black ">
+      <div className="max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8 ">
         {/* Hero Section */}
         <div className="text-center">
           <div className="flex justify-center items-center mb-8">
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           {isMessage ? (
             <>
-              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto text-center">
                 Your AI-powered music companion. Create, compose, and explore
                 music like never before.
               </p>
@@ -45,14 +45,16 @@ export default function Home() {
           ) : (
             <>
               {isLoading && (
-                <l-leapfrog size="40" speed="2.5" color="white"></l-leapfrog>
+                <l-leapfrog size="40" speed="2.5" color="gray"></l-leapfrog>
               )}
             </>
           )}
         </div>
 
         {/* Input Section */}
-        <div className="mt-80 max-w-3xl mx-auto">
+        <div className="w-full max-w-5xl mx-auto px-4">
+          <div className="pl-10"><l-leapfrog size="40" speed="2.5" color="gray"></l-leapfrog></div>
+        
           <form onSubmit={handleSubmit} className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-indigo-800 rounded-full blur opacity-75"></div>
             <div className="relative">
@@ -72,25 +74,6 @@ export default function Home() {
             </div>
           </form>
         </div>
-
-        {/* Features Section */}
-        {/* <div className="mt-24 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <FeatureCard
-            icon={<Bot className="h-6 w-6" />}
-            title="AI-Powered Analysis"
-            description="Get instant musical insights and recommendations powered by advanced AI"
-          />
-          <FeatureCard
-            icon={<Music className="h-6 w-6" />}
-            title="Music Generation"
-            description="Create unique melodies and harmonies with intelligent composition tools"
-          />
-          <FeatureCard
-            icon={<Sparkles className="h-6 w-6" />}
-            title="Smart Learning"
-            description="Learn music theory and techniques through interactive AI guidance"
-          />
-        </div> */}
       </div>
     </main>
   );
